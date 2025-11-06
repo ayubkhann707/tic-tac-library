@@ -5,6 +5,8 @@ import kotlin.random.Random
 
 enum class Mark(val ch: Char) { X('X'), O('O'), EMPTY(' ') }
 
+
+// board for the game
 class Board {
     private val cells = MutableList(9) { Mark.EMPTY }
 
@@ -105,6 +107,7 @@ class HumanPlayer(override val name: String, override val mark: Mark, private va
     }
 }
 
+// when computer as player is chosen
 class RandomComputerPlayer(override val name: String, override val mark: Mark) : Player {
     private val rng = Random.Default
     override fun nextMove(board: Board): Int {
